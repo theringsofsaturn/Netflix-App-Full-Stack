@@ -4,7 +4,7 @@ import Watch from "./pages/watch/Watch";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import { useContext } from "react";
+// import { useContext } from "react";
 const App = () => {
   const user = true;
   return (
