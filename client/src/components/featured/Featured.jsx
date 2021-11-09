@@ -9,7 +9,7 @@ function Featured({ type }) {
       {type && (
         <div className="category">
           {/* if type is movie our title will be "Movies", if it's not, it's gonna be "Series" */}
-          <span>{type === "movie" ? "Movies" : "Series"}</span>
+          <span>{type === "movies" ? "Movies" : "Series"}</span>
           <select name="genre" id="genre">
             <option>Genre</option>
             <option value="adventure">Adventure</option>
