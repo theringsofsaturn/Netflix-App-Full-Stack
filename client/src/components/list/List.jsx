@@ -36,16 +36,10 @@ const List = ({list}) => {
           style={{ display: !isMoved && "none" }} // if it's not moved it's gonna be none. So, at first we will not see the arrow at the left, but if we click the right arrow and move the slide, then isMoved === true, so we will see the left arrow and click to slide.
         />
         <div className="container" ref={listRef}>
+          {list.content.map((item, index) => (
+            <ListItem key={index} item={item} />
+          ))}
           <ListItem index={0}/>
-          <ListItem index={1}/>
-          <ListItem index={2}/>
-          <ListItem index={3}/>
-          <ListItem index={4}/>
-          <ListItem index={5}/>
-          <ListItem index={6}/>
-          <ListItem index={7}/>
-          <ListItem index={8}/>
-          <ListItem index={9}/>
         </div>
         <ArrowForwardIosOutlinedIcon
           className="sliderArrow right"
