@@ -13,7 +13,7 @@ const Home = ({ type }) => {
     const getRandomLists = async () => {
       try {
         const res = await axios.get(
-          // lists is endpoint (we are using proxy as URL). 
+          // lists is endpoint (we are using proxy as URL).
           // if there is a type, then use type query
           // *lists* is the endpoint
           `lists${type ? "?type=" + type : ""}${
@@ -28,13 +28,13 @@ const Home = ({ type }) => {
           }
         );
         setLists(res.data);
-        console.log("DATA:",res.data);
+        console.log("DATA:", res.data);
       } catch (err) {
         console.log(err);
       }
     };
     getRandomLists();
-  }, [type, genre]); // whenever type or genre changes, it is donna call this useEffect. (getRandomLists will be called)
+  }, [type, genre]); // whenever type or genre changes, it is gonna call this useEffect. (getRandomLists will be called and data will be fetched)
 
   return (
     <div className="home">
