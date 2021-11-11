@@ -1,23 +1,19 @@
-// import Trailer from "../../assets/trailer.mp4";
+import { ArrowBackOutlined } from "@material-ui/icons";
+import { Link, useLocation } from "react-router-dom";
 import "./watch.scss";
-import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 
-const Watch = () => {
+export default function Watch() {
+  const location = useLocation();
+  const movie = location.movie;
   return (
     <div className="watch">
-      <div className="back">
-        <ArrowBackOutlinedIcon />
-        Home
-      </div>
-      <video
-        className="video"
-        autoPlay
-        progress
-        controls
-        src="https://lh3.googleusercontent.com/IWB5xUVWXNdVHW3szJTxN0SWa_1FV09XlFwLbU91a-TO7KCk7Jgmud5xFWY8v44XPR3QwqQeXV_WUvGoVcZlZfX29IDfyPdi-HYDFFiUWtiQedBzBKxLTCgmfMbcU_NznHkvdqMHAN4=dv"
-      />
+      <Link to="/">
+        <div className="back">
+          <ArrowBackOutlined />
+          Home
+        </div>
+      </Link>
+      <video className="video" autoPlay progress controls src={movie.video} />
     </div>
   );
-};
-
-export default Watch;
+}
