@@ -38,10 +38,11 @@ const ListItem = ({ index, item }) => {
         const res = await axios.get("/movies/find/" + item, {
           headers: {
             token:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODlkMjExY2M2YzNjM2Q3NDU2N2MzOCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNjQyMjIzMSwiZXhwIjoxNjM2ODU0MjMxfQ.QDQOb3Giz_bHc5Ujv-50YVH5kQar39vrQB0dHSyMJDU",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOGMzZGRkNTIzZGQ2ODljODRhMmJhYSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzY1ODA4NjgsImV4cCI6MTYzNzAxMjg2OH0.fN_vErnJvEK6aqkJTwOB8qPd4TYJKnzB0W55hBwKt_I",
           },
         });
         setMovie(res.data);
+        console.log("ITEM DATA PROBLEM TO FIX",res.data);
       } catch (err) {
         console.log(err);
       }
@@ -49,8 +50,9 @@ const ListItem = ({ index, item }) => {
     getMovie();
   }, [item]);
 
+  console.log("ITEM", item);
   return (
-    // if I do <Link to="/watch"> I cannot pass my movie as a prop. So, create an object with pathname
+    // if I do <Link to="/watch"> I cannot pass my movie as a prop. So, create an object with pathname and pass movie
     <Link to={{ pathname: "/watch", movie: movie }}>
       <div
         className="listItem"
@@ -65,7 +67,7 @@ const ListItem = ({ index, item }) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* film cover image */}
-        <img src={movie.img} alt="" />
+        <img src={movie?.img} alt="" />
 
         {/* if it's hovered --> just show this video and the information 
       use <> (or container div) to wrapp it since it will complain because we are using two components here: video & itemInfo */}
@@ -73,9 +75,7 @@ const ListItem = ({ index, item }) => {
           <>
             {/* video trailer */}
             {/* <video src={Trailer} type="video/mp4" autoPlay={true} loop /> */}
-            <video autoPlay loop>
-              <source src={movie.trailer} type="video/mp4" />
-            </video>
+            <video src={movie.trailer} autoPlay={true} loop />
 
             {/* items info */}
             <div className="itemInfo">
