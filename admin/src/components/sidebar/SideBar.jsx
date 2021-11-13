@@ -14,7 +14,7 @@ import {
   AddToQueue,
   QueuePlayNext,
 } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import { Link, Route, Router } from "react-router-dom";
 
 export default function Sidebar() {
   return (
