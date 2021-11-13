@@ -18,7 +18,7 @@ const Navbar = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
     return () => (window.onscroll = null);
   };
-  console.log(isScrolled);
+  // console.log(isScrolled); // it's gonna be true or false
 
   return (
     // if state is true is gonna be class navbar & scrolled, if it's false then just class navbar (which is transparent right now )

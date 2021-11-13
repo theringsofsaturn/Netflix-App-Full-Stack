@@ -38,7 +38,7 @@ const List = ({ list }) => {
         <div className="container" ref={listRef}>
           {/* for each item in the list, call my listItem component and paste the item in the content array */}
           {list.content.map((item, i) => (
-            <ListItem index={i} item={item} />
+            <ListItem key={i} index={i} item={item} />
           ))}
           
         </div>

@@ -42,7 +42,6 @@ const ListItem = ({ index, item }) => {
           },
         });
         setMovie(res.data);
-        console.log("ITEM DATA PROBLEM TO FIX",res.data);
       } catch (err) {
         console.log(err);
       }
@@ -67,15 +66,15 @@ const ListItem = ({ index, item }) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* film cover image */}
-        <img src={movie?.img} alt="" />
+        <img src={movie?.imgSm} alt="" />
 
         {/* if it's hovered --> just show this video and the information 
       use <> (or container div) to wrapp it since it will complain because we are using two components here: video & itemInfo */}
         {isHovered && (
           <>
             {/* video trailer */}
-            {/* <video src={Trailer} type="video/mp4" autoPlay={true} loop /> */}
-            <video src={movie.trailer} autoPlay={true} loop />
+            <video src={Trailer} type="video/mp4" autoPlay={true} loop />
+            {/* <video src={movie.trailer} autoPlay={true} loop  /> */}
 
             {/* items info */}
             <div className="itemInfo">
@@ -87,7 +86,7 @@ const ListItem = ({ index, item }) => {
               </div>
               <div className="itemInfoTop">
                 <span>{movie.duration}</span>
-                <span className="limit">{movie.year}</span>
+                <span className="limit">{movie.limit}</span>
                 <span>{movie.year}</span>
               </div>
               <div className="desc">{movie.desc}</div>
