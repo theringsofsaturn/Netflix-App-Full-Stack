@@ -4,6 +4,7 @@ import "./watch.scss";
 
 export default function Watch() {
   const location = useLocation();
+  console.log(location); // gives you an object with the pathname and the search
   const movie = location.movie;
   return (
     <div className="watch">

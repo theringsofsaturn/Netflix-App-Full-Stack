@@ -41,8 +41,8 @@ const Home = ({ type }) => {
       <Navbar />
       <Featured type={type} setGenre={setGenre} />
       {/* For each list, call my List component and paste my list */}
-      {lists.map((list) => (
-        <List list={list} />
+      {lists.map((list, i) => (
+        <List key={i} list={list} />
       ))}
     </div>
   );
