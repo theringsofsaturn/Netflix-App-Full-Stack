@@ -1,3 +1,4 @@
+import "./app.css";
 import Sidebar from "./components/sidebar/SideBar";
 import TopBar from "./components/topbar/TopBar";
 import {
