@@ -1,6 +1,6 @@
 import "./topbar.css";
 import React from "react";
-import logo from "../../public/gear.png";
+import logo from "../../data/gear.png";
 
 import { NotificationsNone, Language, Settings } from "@material-ui/icons";
 
