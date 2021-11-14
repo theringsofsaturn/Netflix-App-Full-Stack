@@ -1,8 +1,8 @@
 .chart {
   margin: 20px;
   padding: 20px;
-  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 7px rgba(126,125,125,0.61); 
+box-shadow: 0px 0px 5px 7px rgba(126,125,125,0.61);
 }
 
 .chartTitle {

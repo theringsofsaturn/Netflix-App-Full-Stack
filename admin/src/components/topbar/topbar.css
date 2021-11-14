@@ -16,9 +16,9 @@
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 30px;
-  color: rgb(126, 125, 125);
+  width: 40px !important;
+  height: 40px !important; 
+  border-radius: 50%;
   cursor: pointer;
 }
 

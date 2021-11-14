@@ -1,6 +1,7 @@
-import React from 'react'
-
 import "./topbar.css";
+import React from "react";
+import logo from "../../public/gear.png";
+
 import { NotificationsNone, Language, Settings } from "@material-ui/icons";
 
 export default function Topbar() {
@@ -8,7 +9,7 @@ export default function Topbar() {
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
-          <span className="logo">Admin</span>
+          <img className="logo" src={logo} />
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">
@@ -22,7 +23,11 @@ export default function Topbar() {
           <div className="topbarIconContainer">
             <Settings />
           </div>
-          <img src="https://images.gr-assets.com/users/1632342929p8/140785582.jpg" alt="profile pic" className="topAvatar" />
+          <img
+            src="https://images.gr-assets.com/users/1632342929p8/140785582.jpg"
+            alt="profile pic"
+            className="topAvatar"
+          />
         </div>
       </div>
     </div>
