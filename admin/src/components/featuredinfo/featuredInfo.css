@@ -18,12 +18,14 @@
 
 .featuredTitle {
   font-size: 20px;
+  color: rgb(126, 125, 125);
 }
 
 .featuredMoneyContainer {
   margin: 10px 0px;
   display: flex;
   align-items: center;
+  color: rgb(80, 80, 80)
 }
 
 .featuredMoney {
@@ -51,5 +53,5 @@
 
 .featuredSub {
   font-size: 15px;
-  color: gray;
+  color: rgb(126, 125, 125);
 }
