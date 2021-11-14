@@ -1,0 +1,9 @@
+/* Sidebar is 1 unit (flex: 1), so the Home page will be 4 times the Sidebar */
+.home{
+    flex: 4;
+}
+
+.homeWidgets{
+    display: flex;
+    margin: 20px;
+}
