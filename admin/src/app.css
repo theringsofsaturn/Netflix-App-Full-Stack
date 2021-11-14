@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(24, 23, 23);
+  }
+
 .container{
     display: flex;
     margin-top: 10px;
@@ -8,3 +12,4 @@
     text-decoration: none;
     color: inherit;
 }
+

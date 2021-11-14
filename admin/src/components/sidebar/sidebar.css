@@ -1,7 +1,7 @@
 .sidebar {
     flex: 1;
-    height: calc(100vh - 50px);
-    background-color: rgb(251, 251, 255);
+    height: calc(100vh - 50px); /* if I put 100vh, it's gonna overflow, because our navbar is 50 px */
+    /* background-color: rgb(251, 251, 255); */
     position: sticky;
     top: 50px;
   }
@@ -17,7 +17,7 @@
   
   .sidebarTitle {
     font-size: 13px;
-    color: rgb(187, 186, 186);
+    color: rgb(126, 125, 125);
   }
   
   .sidebarList {
@@ -31,11 +31,13 @@
     display: flex;
     align-items: center;
     border-radius: 10px;
+    color: rgb(80, 80, 80)
   }
   
   .sidebarListItem.active,
   .sidebarListItem:hover {
-    background-color: rgb(240, 240, 255);
+    /* background-color: rgb(240, 240, 255); */
+    background-color: rgb(126, 125, 125);
   }
   
   .sidebarIcon{
