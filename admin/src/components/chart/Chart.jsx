@@ -32,11 +32,11 @@ export default function Chart({ title, data, dataKey, grid }) {
             }  
             */}
           {/* ** if we want we can add also Yaxis to display the Y axis in the chart with Yaxis with <Yaxis/> */}
-          <XAxis dataKey="name" stroke="#5550bd" />
+          <XAxis dataKey="name" stroke="#000000" />
           {/* Line is the most important part here to display the chart. 
           dataKey is like: dataKey="Active User". We can put the name we want. 
           the stroke is to give color for names, in our case "months" */}
-          <Line type="monotone" dataKey={dataKey} stroke="#5550bd" />
+          <Line type="monotone" dataKey={dataKey} stroke="#08F213" />
           <Tooltip />
           {/* cartesian grid is to give the squared grid in the chart.
           strokeDasharray is to separate the dashes in the grid to look more nice visually.
