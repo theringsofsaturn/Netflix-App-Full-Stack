@@ -1,13 +1,14 @@
 .user {
   flex: 4;
   padding: 20px;
-  background-color: rgb(126, 125, 125);
+  /* background-color: rgb(126, 125, 125); */
 }
 
 .userTitleContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: rgb(126, 125, 125);
 }
 
 .userAddButton {
@@ -61,10 +62,12 @@
 
 .userShowUsername {
   font-weight: 600;
+  color: rgb(126, 125, 125);
 }
 
 .userShowUserTitle {
   font-weight: 300;
+  color: rgb(80, 80, 80)
 }
 
 .userShowBottom {
