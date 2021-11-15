@@ -20,7 +20,7 @@ export default function WidgetSm() {
               className="widgetSmImg"
             />
             <div className="widgetSmUser">
-              <span className="widgetSmUsername">Tetyana Yaremko</span>
+              <span className="widgetSmUsername">Tetyana Yaremk</span>
             </div>
             <button className="widgetSmButton">
               <Visibility className="widgetSmIcon" />
@@ -74,7 +74,7 @@ export default function WidgetSm() {
               className="widgetSmImg"
             />
             <div className="widgetSmUser">
-              <span className="widgetSmUsername">Stefano Casassola</span>
+              <span className="widgetSmUsername">Stefano Casass</span>
             </div>
             <button className="widgetSmButton">
               <Visibility className="widgetSmIcon" />
