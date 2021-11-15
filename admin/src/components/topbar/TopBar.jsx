@@ -25,7 +25,7 @@ export default function Topbar() {
           </div>
           <img
             src="https://images.gr-assets.com/users/1632342929p8/140785582.jpg"
-            alt="profile pic"
+            alt=""
             className="topAvatar"
           />
         </div>

@@ -1,6 +1,6 @@
 import "./app.css";
 import Sidebar from "./components/sidebar/SideBar";
-import TopBar from "./components/topbar/TopBar";
+import Topbar from "./components/topbar/Topbar";
 import Home from "./pages/home/Home";
 import {
   BrowserRouter as Router,
@@ -9,19 +9,34 @@ import {
   Redirect,
 } from "react-router-dom";
 
-
+import UserList from "./pages/userList/userList";
+import User from "./pages/user/User";
 
 function App() {
+  // const { user } = useContext(AuthContext);
   return (
     <Router>
-    <div>
-      <TopBar/>
-     <div className="container">
-       <Sidebar/>
-       <Home/>
-       </div>
-    </div>
+      <Switch>
+        {/* <Route path="/login"><Redirect to="/" /> : <Login /></Route> */}
+
+        <>
+          <Topbar />
+          <div className="container">
+            <Sidebar />
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/users">
+              <UserList />
+            </Route>
+            <Route path="/user/:userId">
+              <User />
+            </Route>
+          </div>
+        </>
+      </Switch>
     </Router>
   );
 }
+
 export default App;
