@@ -12,15 +12,15 @@ import {
 import UserList from "./pages/userList/userList";
 import User from "./pages/user/User";
 import NewUser from "./pages/newUser/NewUser";
-// import Login from "./pages/login/Login";
-// import { AuthContext } from "./context/authContext/AuthContext";
-// import { useContext } from "react";
-// import ListList from "./pages/listList/ListList";
-// import List from "./pages/list/List";
-// import NewList from "./pages/newList/NewList";
-// import MovieList from "./pages/movieList/MovieList";
-// import { Movie } from "@material-ui/icons";
-// import NewMovie from "./pages/newMovie/NewMovie";
+import Login from "./pages/login/Login";
+import { AuthContext } from "./context/authContext/AuthContext";
+import { useContext } from "react";
+import ListList from "./pages/listList/ListList";
+import List from "./pages/list/List";
+import NewList from "./pages/newList/NewList";
+import MovieList from "./pages/movieList/MovieList";
+import { Movie } from "@material-ui/icons";
+import NewMovie from "./pages/newMovie/NewMovie";
 
 function App() {
   // const { user } = useContext(AuthContext);
@@ -45,7 +45,7 @@ function App() {
             <Route path="/newUser">
               <NewUser />
             </Route>
-            {/* <Route path="/movies">
+            <Route path="/movies">
                 <MovieList />
               </Route>
               <Route path="/movie/:movieId">
@@ -62,7 +62,7 @@ function App() {
               </Route>
               <Route path="/newlist">
                 <NewList />
-              </Route> */}
+              </Route>
           </div>
         </>
       </Switch>
