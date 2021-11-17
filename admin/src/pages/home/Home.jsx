@@ -38,7 +38,11 @@ export default function Home() {
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTQ1ZGUxOGU4MzI1NWFmZDJjYzlhZCIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzcxMTM0MzYsImV4cCI6MTY0NDg4OTQzNn0.GQ5ZbDGz8GOLslqVUpz9SmTLFXKEYlSDGQWjeZgLQ2I",
           },
         });
-        res.data.map((item) =>
+        // sort takes two arguments, the first is the key to sort by, the second is the order
+        const statsList = res.data.sort(function (a, b) {
+          return a._id - b.id;
+        });
+        statsList.map((item) =>
           setUserStats((prev) => [
             // take this prev state, don't change anything, but add one more thing, which is name of the month. -1 because we start from 0 in months array
             ...prev,
