@@ -13,7 +13,7 @@ function Featured({ type }) {
         const res = await axios.get(`/movies/random?type=${type}`, {
           headers: {
             token:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOGMzZGRkNTIzZGQ2ODljODRhMmJhYSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzY1ODA4NjgsImV4cCI6MTYzNzAxMjg2OH0.fN_vErnJvEK6aqkJTwOB8qPd4TYJKnzB0W55hBwKt_I",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTQ1ZGUxOGU4MzI1NWFmZDJjYzlhZCIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzcxMTM0MzYsImV4cCI6MTY0NDg4OTQzNn0.GQ5ZbDGz8GOLslqVUpz9SmTLFXKEYlSDGQWjeZgLQ2I",
           },
         });
         setContent(res.data[0]);

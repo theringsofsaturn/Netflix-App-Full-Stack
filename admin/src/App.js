@@ -1,4 +1,5 @@
 import "./app.css";
+import React, { useMemo } from 'react'
 import Sidebar from "./components/sidebar/SideBar";
 import Topbar from "./components/topbar/Topbar";
 import Home from "./pages/home/Home";
@@ -8,6 +9,8 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 import UserList from "./pages/userList/userList";
 import User from "./pages/user/User";
@@ -46,23 +49,23 @@ function App() {
               <NewUser />
             </Route>
             <Route path="/movies">
-                <MovieList />
-              </Route>
-              <Route path="/movie/:movieId">
-                <Movie />
-              </Route>
-              <Route path="/newMovie">
-                <NewMovie />
-              </Route>
-              <Route path="/lists">
-                <ListList />
-              </Route>
-              <Route path="/list/:listId">
-                <List />
-              </Route>
-              <Route path="/newlist">
-                <NewList />
-              </Route>
+              <MovieList />
+            </Route>
+            <Route path="/movie/:movieId">
+              <Movie />
+            </Route>
+            <Route path="/newMovie">
+              <NewMovie />
+            </Route>
+            <Route path="/lists">
+              <ListList />
+            </Route>
+            <Route path="/list/:listId">
+              <List />
+            </Route>
+            <Route path="/newlist">
+              <NewList />
+            </Route>
           </div>
         </>
       </Switch>

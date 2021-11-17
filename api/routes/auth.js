@@ -46,7 +46,7 @@ authRouter.post("/login", async (req, res) => {
     const accessToken = jwt.sign(
       { id: user._id, isAdmin: user.isAdmin },
       process.env.SECRET_KEY,
-      { expiresIn: "5d" }
+      { expiresIn: "90d" }
     );
 
     // we don't want the password to be sent so we desctructure this password inside user.
