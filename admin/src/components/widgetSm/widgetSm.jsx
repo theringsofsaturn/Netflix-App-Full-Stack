@@ -10,14 +10,15 @@ export default function WidgetSm() {
     const getNewUsers = async () => {
       try {
         // ?new=true is gonna return the 10 recent users
-        const res = await axios.get(`/users?new=true`, {
+        const res = await axios.get("/users?new=true", {
           headers: {
             token:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTQ1ZGUxOGU4MzI1NWFmZDJjYzlhZCIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzcxMTM0MzYsImV4cCI6MTY0NDg4OTQzNn0.GQ5ZbDGz8GOLslqVUpz9SmTLFXKEYlSDGQWjeZgLQ2I",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTU4MjhhZGMzNzVmODFiNzYwODNkMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzE4OTM0NSwiZXhwIjoxNjQ0OTY1MzQ1fQ.vfQYSyWC9pGB4svEKrlYlOIghlw_-MyRpPQZ2eM5bK8",
           },
         });
 
-        const setNewUsers = res.data;
+        const newUsers = res.data;
+        setNewUsers(newUsers);
       } catch (err) {
         console.log(err);
       }
@@ -25,24 +26,32 @@ export default function WidgetSm() {
     getNewUsers();
   }, []);
 
+  console.log("New User Data:", newUser);
+
   return (
     <div className="widgetSm">
       <span className="widgetSmTitle">New Members</span>
       <ul className="widgetSmList">
-        <li className="widgetSmListItem">
-          <img
-            src={"https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"}
-            alt=""
-            className="widgetSmImg"
-          />
-          <div className="widgetSmUser">
-            <span className="widgetSmUsername">Tetyana Yaremk</span>
-          </div>
-          <button className="widgetSmButton">
-            <Visibility className="widgetSmIcon" />
-            Display
-          </button>
-        </li>
+        {newUser.map((user) => (
+          <li className="widgetSmListItem">
+            <img
+              // if there is no profile picture, use the default one
+              src={
+                user.profilePic ||
+                "https://ui-avatars.com/api/?name=Emilian+Kasemi"
+              }
+              alt=""
+              className="widgetSmImg"
+            />
+            <div className="widgetSmUser">
+              <span className="widgetSmUsername">{user.username}</span>
+            </div>
+            <button className="widgetSmButton">
+              <Visibility className="widgetSmIcon" />
+              Display
+            </button>
+          </li>
+        ))}
       </ul>
     </div>
   );

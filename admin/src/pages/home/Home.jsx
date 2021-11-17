@@ -35,14 +35,15 @@ export default function Home() {
         const res = await axios.get(`/users/stats`, {
           headers: {
             token:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTQ1ZGUxOGU4MzI1NWFmZDJjYzlhZCIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzcxMTM0MzYsImV4cCI6MTY0NDg4OTQzNn0.GQ5ZbDGz8GOLslqVUpz9SmTLFXKEYlSDGQWjeZgLQ2I",
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTU4MjhhZGMzNzVmODFiNzYwODNkMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzE4OTM0NSwiZXhwIjoxNjQ0OTY1MzQ1fQ.vfQYSyWC9pGB4svEKrlYlOIghlw_-MyRpPQZ2eM5bK8",
           },
         });
         // sort takes two arguments, the first is the key to sort by, the second is the order
         const statsList = res.data.sort(function (a, b) {
           return a._id - b.id;
         });
-        statsList.map((item) =>
+        
+       statsList.map((item) =>
           setUserStats((prev) => [
             // take this prev state, don't change anything, but add one more thing, which is name of the month. -1 because we start from 0 in months array
             ...prev,
@@ -55,7 +56,7 @@ export default function Home() {
     };
     getStats();
   }, []);
-  // console.log("User Stats:",userStats)
+  console.log("User Stats:",userStats)
 
  
   return (

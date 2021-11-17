@@ -65,7 +65,7 @@ userRouter.get("/", verify, async (req, res) => {
       // if there is a query (which means if we are fetching only new users), is gonna fetch only last 10 users
       // if there is no query, is gonna fetch all users
       const users = query
-        ? await User.find().sort({ _id: -1 }).limit(10)
+        ? await User.find().sort({ _id: -1 }).limit(5)
         : await User.find();
       res.status(200).json(users);
     } catch (err) {
