@@ -84,18 +84,8 @@ userRouter.get("/stats", async (req, res)=>{
   const lastYear = today.setFullYear(today.setFullYear() - 1);
 
   const monthArray = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+   
+    
   ];
 
   // I can find total users per month
