@@ -1,15 +1,20 @@
-// import firebase from "firebase";
+import firebase from "firebase";
 
-// const firebaseConfig = {
-//   apiKey: process.env.APP_KEY,
-//   authDomain: "netflix-151df.firebaseapp.com",
-//   projectId: "netflix-151df",
-//   storageBucket: "netflix-151df.appspot.com",
-//   messagingSenderId: "316700975498",
-//   appId: "1:316700975498:web:15063159b205c1a349a873",
-//   measurementId: "G-2ZGE63ES9F",
-// };
+// My web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID,
+    appId: process.env.APP_ID,
+    measurementId: process.env.MEASUREMENT_ID,
+  };
 
-// firebase.initializeApp(firebaseConfig);
-// const storage = firebase.storage();
-// export default storage;
+  // Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const storage = firebase.storage();
+const analytics = getAnalytics(app);
+
+export default storage
