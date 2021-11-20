@@ -9,7 +9,9 @@ ReactDOM.render(
   <React.StrictMode>
     <AuthContextProvider>
       <MovieContextProvider>
-        <App />
+        <ListContextProvider>
+          <App />
+        </ListContextProvider>
       </MovieContextProvider>
     </AuthContextProvider>
   </React.StrictMode>,

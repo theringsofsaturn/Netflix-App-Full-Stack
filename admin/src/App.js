@@ -26,11 +26,11 @@ import { Movie } from "@material-ui/icons";
 import NewMovie from "./pages/newMovie/NewMovie";
 
 function App() {
-  // const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   return (
     <Router>
       <Switch>
-        {/* <Route path="/login"><Redirect to="/" /> : <Login /></Route> */}
+        <Route path="/login"><Redirect to="/" /> : <Login /></Route>
 
         <>
           <Topbar />
