@@ -1,17 +1,18 @@
-import "./list.scss";
-import ListItem from "../listitem/ListItem";
+import {
+  ArrowBackIosOutlined,
+  ArrowForwardIosOutlined,
+} from "@material-ui/icons";
 import { useRef, useState } from "react";
-import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
-import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
+import ListItem from "../listitem/ListItem";
+import "./list.scss";
 
-const List = ({ list }) => {
+export default function List({ list }) {
   const [isMoved, setIsMoved] = useState(false);
   const [slideNumber, setSlideNumber] = useState(0);
+  const [clickLimit, setClickLimit] = useState(window.innerWidth / 230);
 
-  // to select and get the refernce of the elements we use ref hook, useRef() does the same thing as querySelector or getElementById. But since we cannot use vanilla Javascript here...
   const listRef = useRef();
 
-  // function that handles the arrows to slide 230px when clicked
   const handleClick = (direction) => {
     setIsMoved(true);
     let distance = listRef.current.getBoundingClientRect().x - 50;
@@ -19,36 +20,30 @@ const List = ({ list }) => {
       setSlideNumber(slideNumber - 1);
       listRef.current.style.transform = `translateX(${230 + distance}px)`;
     }
-
-    if (direction === "right" && slideNumber < 5) {
+    if (direction === "right" && slideNumber < 10 - clickLimit) {
       setSlideNumber(slideNumber + 1);
       listRef.current.style.transform = `translateX(${-230 + distance}px)`;
     }
   };
-
   return (
     <div className="list">
       <span className="listTitle">{list.title}</span>
       <div className="wrapper">
-        <ArrowBackIosNewOutlinedIcon
+        <ArrowBackIosOutlined
           className="sliderArrow left"
-          onClick={() => handleClick("left")} // on click function for arrow to slide 230 px left and right
-          style={{ display: !isMoved && "none" }} // if it's not moved it's gonna be none. So, at first we will not see the arrow at the left, but if we click the right arrow and move the slide, then isMoved === true, so we will see the left arrow and click to slide.
+          onClick={() => handleClick("left")}
+          style={{ display: !isMoved && "none" }}
         />
         <div className="container" ref={listRef}>
-          {/* for each item in the list, call my listItem component and paste the item in the content array */}
           {list.content.map((item, i) => (
-            <ListItem key={i} index={i} item={item} />
+            <ListItem index={i} item={item} />
           ))}
-          
         </div>
-        <ArrowForwardIosOutlinedIcon
+        <ArrowForwardIosOutlined
           className="sliderArrow right"
-          onClick={() => handleClick("right")} // on click function for arrow to slide 230 px left and right
+          onClick={() => handleClick("right")}
         />
       </div>
     </div>
   );
-};
-
-export default List;
+}

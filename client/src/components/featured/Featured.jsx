@@ -1,10 +1,9 @@
-import "./featured.scss";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import { useEffect, useState } from "react";
+import { InfoOutlined, PlayArrow } from "@material-ui/icons";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import "./featured.scss";
 
-function Featured({ type }) {
+export default function Featured({ type, setGenre }) {
   const [content, setContent] = useState({});
 
   useEffect(() => {
@@ -13,7 +12,7 @@ function Featured({ type }) {
         const res = await axios.get(`/movies/random?type=${type}`, {
           headers: {
             token:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTU4MjhhZGMzNzVmODFiNzYwODNkMiIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzcxODgyNDgsImV4cCI6MTY0NDk2NDI0OH0.BltOOemWsh0FM425SSp_0nwCqr9DBGMux-hCBL9HHDY",
+              "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
           },
         });
         setContent(res.data[0]);
@@ -24,15 +23,17 @@ function Featured({ type }) {
     getRandomContent();
   }, [type]);
 
-  console.log("CONTENT DATA",content);
+  console.log(content);
   return (
     <div className="featured">
-      {/* Featured is receiving a prop {type}. If there is a type (like series or movies), we are gonna see these information also */}
       {type && (
         <div className="category">
-          {/* if type is movie our title will be "Movies", if it's not, it's gonna be "Series" */}
           <span>{type === "movies" ? "Movies" : "Series"}</span>
-          <select name="genre" id="genre">
+          <select
+            name="genre"
+            id="genre"
+            onChange={(e) => setGenre(e.target.value)}
+          >
             <option>Genre</option>
             <option value="adventure">Adventure</option>
             <option value="comedy">Comedy</option>
@@ -50,29 +51,17 @@ function Featured({ type }) {
           </select>
         </div>
       )}
-      {/* https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/08/21/08/matrixfilmextra2008-22.jpg?width=1200 */}
-      <img
-        src={content.img}
-        alt=""
-      />
-
+      <img src={content.img} alt="" />
       <div className="info">
-      {/* https://occ-0-1432-1433.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABUZdeG1DrMstq-YKHZ-dA-cx2uQN_YbCYx7RABDk0y7F8ZK6nzgCz4bp5qJVgMizPbVpIvXrd4xMBQAuNe0xmuW2WjoeGMDn1cFO.webp?r=df1 */}
-        <img
-          src={content.imgTitle}
-          alt=""
-        />
-
-        <span className="desc">
-        When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.
-        </span>
+        <img src={content.imgTitle} alt="" />
+        <span className="desc">{content.desc}</span>
         <div className="buttons">
           <button className="play">
-            <PlayArrowIcon />
+            <PlayArrow />
             <span>Play</span>
           </button>
           <button className="more">
-            <InfoOutlinedIcon />
+            <InfoOutlined />
             <span>Info</span>
           </button>
         </div>
@@ -80,5 +69,3 @@ function Featured({ type }) {
     </div>
   );
 }
-
-export default Featured;

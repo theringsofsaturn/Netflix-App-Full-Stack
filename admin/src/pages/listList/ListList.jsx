@@ -18,14 +18,14 @@ export default function ListList() {
   };
 
   const columns = [
-    { field: "_id", headerName: "ID", width: 250 },
-    { field: "title", headerName: "title", width: 250 },
-    { field: "genre", headerName: "Genre", width: 150 },
-    { field: "type", headerName: "type", width: 150 },
+    { field: "_id", headerName: "ID", width: 200 },
+    { field: "title", headerName: "title", width: 200 },
+    { field: "genre", headerName: "Genre", width: 120 },
+    { field: "type", headerName: "type", width: 120 },
     {
       field: "action",
       headerName: "Action",
-      width: 150,
+      width: 120,
       renderCell: (params) => {
         return (
           <>
