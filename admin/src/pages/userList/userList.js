@@ -38,12 +38,12 @@ export default function UserList() {
     {
       field: "transaction",
       headerName: "Transaction Volume",
-      width: 160,
+      width: 120,
     },
     {
       field: "action",
       headerName: "Action",
-      width: 150,
+      width: 120,
       renderCell: (params) => {
         return (
           <>

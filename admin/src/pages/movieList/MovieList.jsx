@@ -42,7 +42,7 @@ export default function MovieList() {
     {
       field: "action",
       headerName: "Action",
-      width: 150,
+      width: 120,
       renderCell: (params) => {
         return (
           <>
