@@ -1,7 +1,6 @@
-import "./app.css";
-import React, { useMemo } from 'react'
 import Sidebar from "./components/sidebar/SideBar";
 import Topbar from "./components/topbar/Topbar";
+import "./app.css";
 import Home from "./pages/home/Home";
 import {
   BrowserRouter as Router,
@@ -9,9 +8,6 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
-
 import UserList from "./pages/userList/userList";
 import User from "./pages/user/User";
 import NewUser from "./pages/newUser/NewUser";
@@ -30,44 +26,45 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/login"><Redirect to="/" /> : <Login /></Route>
-
-        <>
-          <Topbar />
-          <div className="container">
-            <Sidebar />
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/users">
-              <UserList />
-            </Route>
-            <Route path="/user/:userId">
-              <User />
-            </Route>
-            <Route path="/newUser">
-              <NewUser />
-            </Route>
-            <Route path="/movies">
-              <MovieList />
-            </Route>
-            <Route path="/movie/:movieId">
-              <Movie />
-            </Route>
-            <Route path="/newMovie">
-              <NewMovie />
-            </Route>
-            <Route path="/lists">
-              <ListList />
-            </Route>
-            <Route path="/list/:listId">
-              <List />
-            </Route>
-            <Route path="/newlist">
-              <NewList />
-            </Route>
-          </div>
-        </>
+        <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
+        {user && (
+          <>
+            <Topbar />
+            <div className="container">
+              <Sidebar />
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/users">
+                <UserList />
+              </Route>
+              <Route path="/user/:userId">
+                <User />
+              </Route>
+              <Route path="/newUser">
+                <NewUser />
+              </Route>
+              <Route path="/movies">
+                <MovieList />
+              </Route>
+              <Route path="/movie/:movieId">
+                <Movie />
+              </Route>
+              <Route path="/newMovie">
+                <NewMovie />
+              </Route>
+              <Route path="/lists">
+                <ListList />
+              </Route>
+              <Route path="/list/:listId">
+                <List />
+              </Route>
+              <Route path="/newlist">
+                <NewList />
+              </Route>
+            </div>
+          </>
+        )}
       </Switch>
     </Router>
   );

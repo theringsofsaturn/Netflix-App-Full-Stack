@@ -1,12 +1,12 @@
 .userList {
     flex: 4;
-    /* background-color: rgb(126, 125, 125); */
+    background-color: rgb(126, 125, 125);
   }
   
   .userListUser {
     display: flex;
     align-items: center;
-    color: rgb(126, 125, 125);
+    background-color: rgb(126, 125, 125);
   }
   
   .userListImg {

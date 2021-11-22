@@ -17,6 +17,8 @@ export default function MovieList() {
     deleteMovie(id, dispatch);
   };
 
+  console.log("Movies List",movies);
+
   const columns = [
     { field: "_id", headerName: "ID", width: 90 },
     {

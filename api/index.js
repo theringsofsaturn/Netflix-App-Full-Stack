@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import cors from "cors";
 import dotenv from "dotenv";
 import listEndpoints from "express-list-endpoints";
 import authRouter from "./routes/auth.js";
@@ -12,6 +13,7 @@ dotenv.config();
 const port = 3001;
 const server = express();
 server.use(express.json());
+server.use(cors())
 
 /* ************ENDPOINTS******************* */
 

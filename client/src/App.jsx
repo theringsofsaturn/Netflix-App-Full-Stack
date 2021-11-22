@@ -9,24 +9,23 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-// import { useContext } from "react";
-// import { AuthContext } from "auth-context";
+import { useContext } from "react";
+import { AuthContext } from "./authContext/AuthContext";
 
 const App = () => {
-  // const { user } = useContext(AuthContext);
-  const user = true;
+  const { user } = useContext(AuthContext);
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          {/* if there is user, we can go to te home page. If there is no user, go to register page */}
+          {/* if there's a user, redirect to home, else redirect to register */}
           {user ? <Home /> : <Redirect to="/register" />}
         </Route>
         <Route path="/register">
-          {/* if we don't have a user, go to register page, if we have a user, go to home page */}
+          {/* if there's not a user, redirect to register, else redirect to home */}
           {!user ? <Register /> : <Redirect to="/" />}
         </Route>
-         {/* if we don't have a user, go to login page, if we have a user, go to home page */}
+        {/* if there's not a user, redirect to login, else redirect to home */}
         <Route path="/login">{!user ? <Login /> : <Redirect to="/" />}</Route>
         {user && (
           <>
@@ -43,35 +42,6 @@ const App = () => {
         )}
       </Switch>
     </Router>
-
-    // <Router>
-    //   <Switch>
-    //     <Route exact path="/">
-    //       {/* if there is user, we can go to te home page. If there is no user, go to register page */}
-    //       {user ? <Home /> : <Redirect to="/register" />}
-    //     </Route>
-    //     <Route path="/register">
-    //       {/* if we don't have a user, go to register page, if we have a user, go to home page */}
-    //       {!user ? <Register /> : <Redirect to="/" />}
-    //     </Route>
-    //     {/* if we don't have a user, go to login page, if we have a user, go to home page */}
-    //     <Route path="/login">{!user ? <Login /> : <Redirect to="/" />}</Route>
-    //     {/* if there is a user, you can see these pages */}
-    //     {user && (
-    //       <>
-    //         <Route path="/movies">
-    //           <Home type="movie" />
-    //         </Route>
-    //         <Route path="/series">
-    //           <Home type="series" />
-    //         </Route>
-    //         <Route path="/watch">
-    //           <Watch />
-    //         </Route>
-    //       </>
-    //     )}
-    //   </Switch>
-    // </Router>
   );
 };
 
