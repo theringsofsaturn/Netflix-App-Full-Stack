@@ -1,44 +1,44 @@
 .newProduct {
-    flex: 4;
+    flex: 4 !important;
   }
   
   .addProductForm {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
+    margin-top: 10px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
   }
   
   .addProductItem {
     width: 400px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 10px !important;
   }
   
   .addProductItem > label {
-    color: gray;
+    color: gray !important;
     font-weight: 600;
     margin-bottom: 10px;
   }
   
   .addProductItem > input {
-    padding: 10px;
+    padding: 10px !important;
   }
   
   .addProductItem > select {
-    padding: 10px;
+    padding: 10px !important;
   }
   
   .addProductButton {
-    height: 30px;
-    margin-top: 10px;
-    padding: 7px 10px;
-    border: none;
-    border-radius: 10px;
-    background-color: darkblue;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    align-self: center;
+    height: 30px !important;
+    margin-top: 10px !important;
+    padding: 7px 10px !important;
+    border: none !important;
+    border-radius: 10px !important;
+    background-color: rgb(68, 68, 68) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    align-self: center !important
   }
   

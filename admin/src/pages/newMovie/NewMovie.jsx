@@ -57,6 +57,8 @@ export default function NewMovie() {
     ]);
   };
 
+  console.log("Movies Data", movie);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     createMovie(movie, dispatch);

@@ -1,10 +1,12 @@
 .productList {
     flex: 4;
+    background-color: rgb(126, 125, 125) !important;
   }
   
   .productListItem {
     display: flex;
     align-items: center;
+    background-color: rgb(126, 125, 125);
   }
   
   .productListImg {
@@ -28,5 +30,9 @@
   .productListDelete {
     color: red;
     cursor: pointer;
+  }
+  
+  .MuiDataGrid-root .MuiDataGrid-overlay {
+    background-color: rgb(126, 125, 125) !important
   }
   
