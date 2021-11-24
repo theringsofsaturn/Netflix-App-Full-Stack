@@ -9,7 +9,7 @@ export default function Featured({ type, setGenre }) {
   useEffect(() => {
     const getRandomContent = async () => {
       try {
-        const res = await axios.get(`/movies/random?type=${type}`, {
+        const res = await axios.get(`http://localhost:3001/api/movies/random?type=${type}`, {
           headers: {
             token:
               "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
@@ -53,7 +53,8 @@ export default function Featured({ type, setGenre }) {
       )}
       <img src={content.img} alt="" />
       <div className="info">
-        <img src={content.imgTitle} alt="" />
+        <div className="img-div"><img id="img-title" src={content.imgTitle} alt="" /></div>
+        
         <span className="desc">{content.desc}</span>
         <div className="buttons">
           <button className="play">

@@ -16,12 +16,16 @@ export default function ListItem({ index, item }) {
   useEffect(() => {
     const getMovie = async () => {
       try {
-        const res = await axios.get("/movies/find/" + item, {
-          headers: {
-            token:
-            "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
-          },
-        });
+        const res = await axios.get(
+          "http://localhost:3001/api/movies/find/" + item,
+          {
+            headers: {
+              token:
+                "Bearer " +
+                JSON.parse(localStorage.getItem("user")).accessToken,
+            },
+          }
+        );
         setMovie(res.data);
       } catch (err) {
         console.log(err);
@@ -29,6 +33,7 @@ export default function ListItem({ index, item }) {
     };
     getMovie();
   }, [item]);
+  console.log("List movie ERROR CHECK", movie);
 
   return (
     <Link to={{ pathname: "/watch", movie: movie }}>
@@ -41,6 +46,9 @@ export default function ListItem({ index, item }) {
         <img src={movie?.imgSm} alt="" />
         {isHovered && (
           <>
+            {/* <video autoPlay loop>
+            <source src={movie.trailer} type="video/mp4" />
+          </video> */}
             <video src={movie.trailer} autoPlay={true} loop />
             <div className="itemInfo">
               <div className="icons">

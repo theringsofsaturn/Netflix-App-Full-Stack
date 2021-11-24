@@ -35,6 +35,7 @@ export const createMovie = async (movie, dispatch) => {
       },
     });
     dispatch(createMovieSuccess(res.data));
+    console.log("Create movie data",res.data);
   } catch (err) {
     dispatch(createMovieFailure());
   }
