@@ -26,8 +26,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
-        {user && (
+        <Route path="/login"><Login /></Route>
+       
           <>
             <Topbar />
             <div className="container">
@@ -64,7 +64,7 @@ function App() {
               </Route>
             </div>
           </>
-        )}
+       
       </Switch>
     </Router>
   );
