@@ -32,7 +32,7 @@ export default function Home() {
   useEffect(() => {
     const getStats = async () => {
       try {
-        const res = await axios.get(`/users/stats`, {
+        const res = await axios.get(`http://localhost:3001/api/users/stats`, {
           headers: {
             token:
               "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTU4MjhhZGMzNzVmODFiNzYwODNkMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzE4OTM0NSwiZXhwIjoxNjQ0OTY1MzQ1fQ.vfQYSyWC9pGB4svEKrlYlOIghlw_-MyRpPQZ2eM5bK8",

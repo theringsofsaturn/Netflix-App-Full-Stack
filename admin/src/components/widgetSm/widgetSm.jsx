@@ -10,7 +10,7 @@ export default function WidgetSm() {
     const getNewUsers = async () => {
       try {
         // ?new=true is gonna return the 10 recent users
-        const res = await axios.get("/users?new=true", {
+        const res = await axios.get("http://localhost:3001/api/users?new=true", {
           headers: {
             token:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWFkYjIwMDcyOGJmZWVhNzM5ZjA2MyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzUzOTY4MCwiZXhwIjoxNjQ1MzE1NjgwfQ.ZoJCqQTLOwtdZTm8ZsTD77BMV0-Zjiijz4fhm7YzSJk",
