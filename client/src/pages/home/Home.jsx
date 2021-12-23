@@ -4,6 +4,7 @@ import "./home.scss";
 import List from "../../components/list/List";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Footer from "../../components/footer/Footer";
 
 const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
@@ -13,7 +14,7 @@ const Home = ({ type }) => {
     const getRandomLists = async () => {
       try {
         const res = await axios.get(
-          `lists${type ? "?type=" + type : ""}${
+          `http://localhost:3001/api/lists${type ? "?type=" + type : ""}${
             genre ? "&genre=" + genre : ""
           }`,
           {
@@ -38,6 +39,7 @@ const Home = ({ type }) => {
       {lists.map((list) => (
         <List list={list} />
       ))}
+      {/* <Footer/> */}
     </div>
   );
 };

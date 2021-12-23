@@ -22,7 +22,7 @@ export default function Register() {
     setPassword(passwordRef.current.value);
     setUsername(usernameRef.current.value);
     try {
-      await axios.post("auth/register", { email,username, password });
+      await axios.post("http://localhost:3001/api/auth/register", { email,username, password });
       history.push("/login");
     } catch (err) {}
   };

@@ -1,5 +1,5 @@
 import Sidebar from "./components/sidebar/SideBar";
-import Topbar from "./components/topbar/Topbar";
+import Topbar from "./components/topbar/TopBar";
 import "./app.css";
 import Home from "./pages/home/Home";
 import {

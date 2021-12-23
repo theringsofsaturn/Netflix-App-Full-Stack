@@ -1,8 +1,8 @@
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
+import { Row, Col } from "react-bootstrap";
+import "./footer.css"
 
-const Footer = () => (
-    <footer>
+const MyFooter = () => (
+  <footer>
     <Row className="text-center mt-5">
       <Col xs={{ span: 6, offset: 3 }}>
         <Row>
@@ -124,4 +124,4 @@ const Footer = () => (
   </footer>
 );
 
-export default Footer
+export default MyFooter;

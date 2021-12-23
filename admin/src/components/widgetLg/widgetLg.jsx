@@ -6,7 +6,7 @@ export default function WidgetLg() {
   };
   return (
     <div className="widgetLg">
-      <h3 className="widgetLgTitle">Latest transactions</h3>
+      <h3 className="widgetLgTitle">Latest subscribtions</h3>
       <table className="widgetLgTable">
         <tbody>
           <tr className="widgetLgTr">
@@ -25,7 +25,7 @@ export default function WidgetLg() {
               <span className="widgetLgName">Mo Zee</span>
             </td>
             <td className="widgetLgDate">2 Jun 2021</td>
-            <td className="widgetLgAmount">$520.00</td>
+            <td className="widgetLgAmount">7.99€</td>
             <td className="widgetLgStatus">
               <Button type="Approved" />
             </td>
@@ -40,7 +40,7 @@ export default function WidgetLg() {
               <span className="widgetLgName">Guillermo Fragachan</span>
             </td>
             <td className="widgetLgDate">2 Jun 2021</td>
-            <td className="widgetLgAmount">$20.00</td>
+            <td className="widgetLgAmount">9.99€</td>
             <td className="widgetLgStatus">
               <Button type="Declined" />
             </td>
@@ -55,7 +55,7 @@ export default function WidgetLg() {
               <span className="widgetLgName">Lorenzo Giorgini</span>
             </td>
             <td className="widgetLgDate">2 Jun 2021</td>
-            <td className="widgetLgAmount">$210.00</td>
+            <td className="widgetLgAmount">11.99€</td>
             <td className="widgetLgStatus">
               <Button type="Pending" />
             </td>
@@ -70,7 +70,7 @@ export default function WidgetLg() {
               <span className="widgetLgName">Bogdan Birau</span>
             </td>
             <td className="widgetLgDate">2 Jun 2021</td>
-            <td className="widgetLgAmount">$160.00</td>
+            <td className="widgetLgAmount">9.99€</td>
             <td className="widgetLgStatus">
               <Button type="Approved" />
             </td>
